@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,6 +26,11 @@ gem 'jquery-rails'
 
 group :development, :test do
   # To use debugger
+   gem 'heroku'
+   gem 'foreman'
+
+   gem 'awesome_print'
+
    gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
@@ -33,6 +39,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'
+
+  gem 'faker'
   gem 'launchy'
 end
 
