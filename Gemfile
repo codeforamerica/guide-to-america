@@ -10,6 +10,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'ruby-debug19', :require => 'ruby-debug'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,8 +33,6 @@ group :development, :test do
   gem 'foreman'
 
   gem 'awesome_print'
-
-  gem 'ruby-debug19', :require => 'ruby-debug'
 
   gem 'rspec-rails'
 end
