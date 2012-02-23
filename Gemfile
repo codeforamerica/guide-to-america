@@ -26,19 +26,20 @@ gem 'jquery-rails'
 
 group :development, :test do
   # To use debugger
-   gem 'heroku'
-   gem 'foreman'
+  gem 'heroku'
+  gem 'foreman'
 
-   gem 'awesome_print'
+  gem 'awesome_print'
 
-   gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'rspec-rails'
 
   gem 'faker'
   gem 'launchy'
