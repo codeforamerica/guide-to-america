@@ -2,10 +2,12 @@
  * This controller is the main, and only controller for this application. It handles all the views and functionality
  * of this application.
  */
-Ext.define('GuideToAmerica.controller.Location', {
+Ext.define('GuideToAmerica.controller.Cities', {
     extend: 'Ext.app.Controller',
 
-	
+    init: function() {
+        console.log('Initialized Users! This happens before the Application launch function is called');
+    },	
     /**
      * The launch method is called when the browser is ready, and the application can launch.
      *
@@ -62,7 +64,7 @@ Ext.define('GuideToAmerica.controller.Location', {
             itemTpl: '<div class="contact">{city} <strong>{state}</strong></div>',
 
             //give it a link to the store instance
-            store: this.getLocations(),
+            store: this.getCities(),
 
 
             grouped: true,
@@ -96,7 +98,7 @@ Ext.define('GuideToAmerica.controller.Location', {
      * Returns a new store instance if one hasn't been created yet
      * @return {Ext.data.Store}
      */
-    getLocations: function() {
+    getCities: function() {
         //check if a store has already been set
         if (!this.store) {
             //if not, create one
@@ -111,11 +113,70 @@ Ext.define('GuideToAmerica.controller.Location', {
                 groupField: 'state',
 
                 //and give it some data
-                data: [
-                    { city: 'San Francisco',   state: 'California' },
-                    { city: 'New Orleans',     state: 'Lousiana' },
-                    { city: 'Detroit',     state: 'Michigan' }
-                ]
+	            proxy: {
+	                type: 'ajax',
+	                url: '/Cities.json'
+	            }
+            });
+        }
+
+        //return the store instance
+        return this.store;
+    },
+
+    /**
+     * Returns a new store instance if one hasn't been created yet
+     * @return {Ext.data.Store}
+     */
+    getCategories: function() {
+        //check if a store has already been set
+        if (!this.store) {
+            //if not, create one
+            this.store = Ext.create('Ext.data.Store', {
+                //define the stores fields
+                fields: ['city', 'state'],
+
+                //sort the store using the state field
+                sorters: 'state',
+
+                //group the store using the state field
+                groupField: 'state',
+
+                //and give it some data
+	            proxy: {
+	                type: 'ajax',
+	                url: '/categories.json'
+	            }
+            });
+        }
+
+        //return the store instance
+        return this.store;
+    },
+
+    /**
+     * Returns a new store instance if one hasn't been created yet
+     * @return {Ext.data.Store}
+     */
+    getTips: function() {
+        //check if a store has already been set
+        if (!this.store) {
+            //if not, create one
+            this.store = Ext.create('Ext.data.Store', {
+                //define the stores fields
+                fields: ['city', 'state'],
+
+                //sort the store using the state field
+                sorters: 'state',
+
+                //group the store using the state field
+                groupField: 'state',
+
+                //and give it some data
+	            proxy: {
+	                type: 'ajax',
+	                url: '/tips.json'
+	            }
             });
         }
 
@@ -131,7 +192,7 @@ Ext.define('GuideToAmerica.controller.Location', {
     onSearchKeyUp: function(field) {
         //get the store and the value of the field
         var value = field.getValue(),
-            store = this.getLocations();
+            store = this.getCities();
 
         //first clear any current filters on thes tore
         store.clearFilter();
@@ -183,7 +244,7 @@ Ext.define('GuideToAmerica.controller.Location', {
      */
     onSearchClearIconTap: function() {
         //call the clearFilter method on the store instance
-        this.getLocations().clearFilter();
+        this.getCities().clearFilter();
     }
 	
    

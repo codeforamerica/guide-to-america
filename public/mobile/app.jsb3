@@ -1,6 +1,6 @@
 {
-    "projectName": "Project Name",
-    "licenseText": "Copyright(c) 2011 Company Name",
+    "projectName": "Guide to Americe",
+    "licenseText": "Copyright(c) 2011 Code for America",
     "builds": [
         {
             "name": "All Classes",
