@@ -5,7 +5,10 @@ GuideToAmerica::Application.routes.draw do
 
   resources :categories
   resources :tips
-  resources :cities
+
+  match 'cities' => 'cities#index'
+  match 'cities/:machine_name' => 'cities#show'
+  match 'cities/:machine_name/tips' => 'cities#tips'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
