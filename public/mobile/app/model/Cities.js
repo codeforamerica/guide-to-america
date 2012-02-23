@@ -5,9 +5,8 @@
  * 'show' action in app/controllers/search.js to see the association in use.
  */
 Ext.define('GuideToAmerica.model.Cities', {
-    extend: 'Ext.data.Model'
+    extend: 'Ext.data.Model',    
     config: {
 
     }
-
 });
