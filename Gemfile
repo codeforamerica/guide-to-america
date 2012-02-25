@@ -35,6 +35,9 @@ group :development, :test do
   gem 'awesome_print'
 
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem "shoulda"
 end
 
 group :test do
@@ -42,7 +45,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
 
-  gem 'faker'
+
   gem 'launchy'
 end
 
