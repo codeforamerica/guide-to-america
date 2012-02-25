@@ -14,4 +14,8 @@ FactoryGirl.define do
   factory :tip do
     tip Faker::Lorem.sentence
   end
+
+  factory :city_with_tips, :parent => :city do |city|
+    city.after_create { |a| Factory(:tip, :city => a) }
+  end
 end

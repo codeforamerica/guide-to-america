@@ -37,12 +37,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem "shoulda"
 end
 
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
+
 
   gem 'launchy'
 end

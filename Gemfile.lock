@@ -189,6 +189,7 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
+    shoulda (2.11.3)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -234,5 +235,6 @@ DEPENDENCIES
   rails_admin!
   rspec-rails
   sass-rails (~> 3.2.3)
+  shoulda
   thin
   uglifier (>= 1.0.3)
