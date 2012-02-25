@@ -11,15 +11,16 @@ Ext.application({
     phoneStartupScreen : 'resources/images/phone_startup.png',
     icon: 'resources/images/icon.png',
     glossOnIcon: false,
-    controllers: ['Cities'],
 
-    // require any components we are using in this example
-    requires: [
-        'Ext.data.Store',
-        'Ext.List',
-        'Ext.field.Search',
-        'Ext.Toolbar',
-		'Ext.Loader'
-    ]
+    models: ['Category', 'Tip'],
+    stores: ['Categories','Tips'],
+    views: ['Main'],
+    controllers: ['Application'],
+
+    launch: function() {
+        Ext.Viewport.add({
+            xclass: 'GuideToAmerica.view.Main'
+        });
+    }
 
 });

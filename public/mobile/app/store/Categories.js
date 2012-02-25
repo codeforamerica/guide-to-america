@@ -1,8 +1,8 @@
-Ext.define('GuideToAmerica.store.Cities', {
+Ext.define('GuideToAmerica.store.Categories', {
     extend: 'Ext.data.Store',
 
     config: {
-        model: 'GuideToAmerica.model.City',
+        model: 'GuideToAmerica.model.Category',
         autoLoad: true,
         sorters: 'name',
         grouper: {
@@ -12,7 +12,7 @@ Ext.define('GuideToAmerica.store.Cities', {
         },
         proxy: {
             type: 'ajax',
-            url: '/cities.json'
+            url: '/categories.json'
         }
     }
 });
