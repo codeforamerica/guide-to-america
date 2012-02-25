@@ -1,0 +1,5 @@
+%h1.city=@city.name << "Tips"
+-@city.tips.each do |t|
+  .tip=t.tip << " (" << t.category.name << ")"
+  = link_to 'More ...', t.tip
+  

@@ -1,0 +1,7 @@
+-unless @tip.nil?
+	%h1.tip=@tip.tip
+	%ul
+	%li Category: #{@tip.category.name}
+	%li City: #{@tip.city.name}, #{@tip.city.state}
+	%li Submitted by: #{@tip.user.name}
+	

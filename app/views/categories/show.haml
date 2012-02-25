@@ -1,0 +1,3 @@
+%h1.category=@category.name + " Tips"
+-@category.tips.each do |t|
+  .tip=t.tip << " (" << t.city.name << ")"
